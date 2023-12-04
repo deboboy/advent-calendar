@@ -28,16 +28,18 @@ export default function Home() {
   const isAdvent = currentDate >= adventStart;
   
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto bg-gray-800">
       <Head>
         <title>Advent Calendar 2023</title>
         <meta name="description" content="Join us in our Advent Calendar 2023 journey." />
         <meta name="keywords" content="Advent, Calendar, 2023, Christmas, Holidays" />
       </Head>
-      <main className="p-4 m-4">
-        <h1 className="text-2xl font-bold mt-4 mb-2">Advent Calendar 2023</h1>
-
-        <div className="grid grid-cols-3 gap-4">
+      <header className="bg-gray-800 text-white text-center py-4 border-b border-gray-300">
+        <h1 className="text-2xl font-bold">Advent Calendar 2023</h1>
+      </header>
+      <main className="p-4 m-4 bg-gray-800">
+        {/* <h1 className="text-2xl font-bold mt-4 mb-2">Advent Calendar 2023</h1> */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {
             adventData.map((data) => (
               isAdvent && data.day <= (currentDay - adventStart.getDate() + 1) ?
@@ -62,6 +64,11 @@ export default function Home() {
           }
         </div>
       </main>
+      <footer className="mt-12 bg-gray-800 text-white text-center py-4">
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} @deboboy
+        </p>
+      </footer>
     </div>
   );
 }
