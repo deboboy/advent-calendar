@@ -43,7 +43,7 @@ export default function Home() {
           {
             adventData.map((data) => (
               isAdvent && data.day <= (currentDay - adventStart.getDate() + 1) ?
-              <div key={data.day} className="bg-white shadow-md rounded-lg p-6">
+              <div key={data.day} className="relative bg-white shadow-md rounded-lg p-6">
                 <img 
                   src={`/images/day${data.day}.jpg`} 
                   alt={`Day ${data.day}`} 
