@@ -1,6 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Advent Calendar 2023
+Inspired to observe and contemplate Advent season; created this web app.  Feel free to use for your own daily meditations.
+
+## Advent content generated via Search for Intelligence
+Content for the app was generated via multiple LLM APIs (or platforms hosting them).  I chose to use my own LLM experiments app, [Search for Intelligence][https://www.desearch.xyz/], to generate images and text.
+
+Use this prompt to create the daily image:
+`Create an image for the third day of Advent in the style of María Izquierdo`
+
 
 ## Getting Started
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
@@ -35,8 +45,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Advent content generated via Search for Intelligence
-Use this prompt to create the daily image:
-`Create an image for the third day of Advent in the style of María Izquierdo`
 
 
