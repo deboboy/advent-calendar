@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useState } from "react";
 import adventData from './adventData.json';
 import AdventImage from './AdventImage';
+import AdventArt from './AdventArt';
 
 export default function Home() {
   // Define the current date
@@ -87,22 +88,36 @@ export default function Home() {
           onClick={handleCloseMessage}
         >
           <div
-            className="bg-gradient-to-br from-pink-500 via-purple-600 to-orange-500 rounded-2xl p-8 max-w-lg w-full shadow-2xl transform animate-fadeIn"
+            className="bg-gradient-to-br from-pink-500 via-purple-600 to-orange-500 rounded-2xl p-1 max-w-2xl w-full shadow-2xl transform animate-fadeIn"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-white/95 rounded-xl p-6 backdrop-blur-sm">
-              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-pink-600 via-purple-600 to-orange-600 bg-clip-text text-transparent">
-                Day {selectedDay}
+            <div className="bg-white/95 rounded-xl p-6 md:p-8 backdrop-blur-sm">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-pink-600 via-purple-600 to-orange-600 bg-clip-text text-transparent">
+                Day {selectedDay} of Advent
               </h2>
-              <p className="text-lg text-gray-800 leading-relaxed">
-                {adventData[selectedDay - 1].msg}
-              </p>
-              <button
-                onClick={handleCloseMessage}
-                className="mt-6 px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
-              >
-                Close
-              </button>
+
+              {/* Advent Art Display */}
+              <div className="flex justify-center mb-6">
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden shadow-lg">
+                  <AdventArt day={selectedDay} />
+                </div>
+              </div>
+
+              {/* Advent Thought */}
+              <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-lg p-6 mb-6">
+                <p className="text-base md:text-lg text-gray-800 leading-relaxed text-center italic">
+                  &ldquo;{adventData[selectedDay - 1].msg}&rdquo;
+                </p>
+              </div>
+
+              <div className="flex justify-center">
+                <button
+                  onClick={handleCloseMessage}
+                  className="px-8 py-3 bg-gradient-to-r from-pink-500 via-purple-600 to-orange-500 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
